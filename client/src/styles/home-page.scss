@@ -1,0 +1,45 @@
+@use './abstracts' as *;
+
+#home {
+    margin: auto;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 100rem;
+}
+
+.home-nav-section {
+    margin: 1rem 0;
+}
+
+.section-heading {
+    text-align: center;
+}
+
+.home-nav-btn {
+    display: block;
+    text-align: center;
+    line-height: 2.5rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: all .5s;
+    color: #ffffff;
+    background-color: #a80000;
+}
+
+.home-nav-btn + .home-nav-btn {
+    margin-top: 1rem;
+}
+
+.home-nav-btn:hover {
+    background-color: #6d0c0c;
+}
+
+//***FIRST MEDIA QUERY***//
+@include for-tablet-landscape-up {
+    .home-nav-btn {
+        display: inline-block;
+        margin: .5rem;
+    }
+}

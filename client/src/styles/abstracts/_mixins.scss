@@ -1,0 +1,10 @@
+//Media-Query mixins
+//The 'middle' sized layout
+@mixin for-tablet-landscape-up {
+    @media (min-width: 50rem) { @content; }
+}
+    
+//The 'big' sized layout
+@mixin for-desktop-up {
+    @media (min-width: 1000px) { @content; }
+}

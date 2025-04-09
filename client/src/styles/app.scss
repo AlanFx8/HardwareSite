@@ -1,0 +1,68 @@
+@use './abstracts' as *;
+
+html, body {
+    height: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+#root {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100%;    
+}
+
+.basic-link {
+    color: #0066ff;
+}
+
+.basic-link:hover {
+    color: #0033ff;
+    font-style: italic;
+}
+
+//BUTTONS
+.continue-shopping-btn, .cart-checkout-btn {
+    cursor: pointer;
+    display: block;
+    width: 20rem;
+    line-height: 5rem;
+    padding: 0 .5rem;
+    font-weight: bold;
+    font-size: 1.8rem;
+    transition: all .5s;
+}
+
+.continue-shopping-btn {
+    color: #666666;
+    border: solid 1px #666666;
+    background-color: #ffffff;
+}
+
+.continue-shopping-btn:hover {
+    background-color: #bbbbbb;
+}
+
+.cart-checkout-btn {
+    color: #ffffff;
+    background-color: #a80000;
+}
+
+.cart-checkout-btn:hover {
+    background-color: #6d0c0c;
+}
+
+//HELPERS
+.padding-1 {
+    padding: .8em;
+}
+
+.centered-object {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

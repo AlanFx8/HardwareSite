@@ -1,0 +1,48 @@
+@use './abstracts' as *;
+
+#scroll-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 24px;
+    height: 24px;
+    
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    
+    opacity: 0;
+    transition-property: background-color, opacity;
+    transition-duration: .5s;
+}
+
+#scroll-button.active {
+    opacity: 1;
+}
+
+#scroll-button.active:hover {
+    background: #5e5e5e;
+    cursor: pointer;
+}
+
+#scroll-button > div {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #000000;
+}
+
+//***FIRST MEDIA QUERY***//
+@include for-tablet-landscape-up {
+    #scroll-button {        
+        width: 48px;
+        height: 48px;
+        background: #838383;
+        border: solid 1px #000000;
+
+        bottom: 24px;
+        right: 24px;
+    }
+}

@@ -1,0 +1,23 @@
+@use './abstracts' as *;
+
+.products-list {
+    padding: 1.5rem;
+}
+
+@include for-tablet-landscape-up {
+    .products-content-wrapper {
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .products-list {
+        display: inline-block;
+        width: 75%;
+    }
+}
+
+@include for-desktop-up {
+    .products-list {
+        width: 70%;
+    }
+}

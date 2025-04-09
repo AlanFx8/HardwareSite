@@ -1,0 +1,20 @@
+.product-rating-background {
+    display: inline-block;
+    width: 75px;
+    height: 15px;
+    background-image: url('../assets/img/ReviewStarsBackground.png');
+    background-repeat: no-repeat;
+}
+
+.product-rating {
+    display: block;
+    height: 15px;
+    background-image: url('../assets/img/ReviewStars.png');
+    background-repeat: no-repeat;
+}
+
+.product-review-count {
+    padding-left: .5em;
+    color: #444444;
+    font-size: 1.4rem;
+}

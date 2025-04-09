@@ -1,0 +1,140 @@
+@use './abstracts' as *;
+
+//Variables
+$bgOffset: 11;
+
+//Build the Departments Map
+$departments: (
+    "powerdrills": (
+        "id": 100,
+        "count": 6
+    ),
+    "lawnmowers": (
+        "id": 200,
+        "count": 4
+    ),
+    "snowblowers": (
+        "id": 300,
+        "count": 6
+    ),
+    "grills": (
+        "id": 400,
+        "count": 9
+    ),
+    "chainsaws": (
+        "id": 500,
+        "count": 5
+    )
+);
+
+//Listed Product
+.listed-product {
+    display: inline-block;
+    padding: .5rem;
+    width: 50%;
+    height: 38rem;
+    overflow: auto;
+}
+
+.listed-product.hidden {
+    display: none;
+}
+
+//Images
+.listed-product-img-wrapper {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listed-product-img-wrapper > a {
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 250px;
+    height: 100%;
+}
+
+.listed-product-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 1000% 100%;
+}
+
+.powerdrills-img {
+    background-image: url('../assets/img/powerdrills_thumbnails.jpg');
+}
+
+.lawnmowers-img {
+    background-image: url('../assets/img/lawnmowers_thumbnails.jpg');
+}
+
+.snowblowers-img {
+    background-image: url('../assets/img/snowblowers_thumbnails.jpg');
+}
+
+.grills-img {
+    background-image: url('../assets/img/grills_thumbnails.jpg');
+}
+
+.chainsaws-img {
+    background-image: url('../assets/img/chainsaws_thumbnails.jpg');
+}
+
+//Use the Department Maps to build unique classes for background offsets
+@each $property, $map in $departments {
+    $id: map-get($map, "id");
+    $count: map-get($map, "count");
+
+    @for $i from 1 through $count {
+        $instance: $id + $i;
+        $offset: #{($bgOffset * $i) - $bgOffset} + '%';
+
+        //Replace '-0px' with '0'
+        @if ($i == 1) {
+            $offset: 0;
+        }
+
+        //Build unique css property
+        .#{$property}-img-#{$instance} {
+            background-position-x: $offset;
+        }
+    }
+}
+
+//Name, Price, and Reviews
+.listed-product-name {
+    font-weight: bold;
+}
+
+.listed-product-price-current {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.listed-product-price-old {
+    color: #444444;
+    font-size: 1.4rem;
+    text-decoration: line-through;
+    padding: 0 .5rem;
+}
+
+.listed-product-review-count {
+    color: #444444;
+    font-size: 1.4rem;
+}
+
+//***FIRST MEDIA QUERY***//
+@include for-tablet-landscape-up {
+    .listed-product {
+        display: inline-block;
+        padding: .5rem;
+        width: 33%;
+        height: 42rem;
+        overflow: auto;
+    }
+}

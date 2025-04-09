@@ -1,0 +1,15 @@
+.product-name {
+    font-weight: bold;
+}
+
+.product-price-current {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.product-price-old {
+    color: #444444;
+    font-size: 1.4rem;
+    text-decoration: line-through;
+    padding: 0 .5rem;
+}

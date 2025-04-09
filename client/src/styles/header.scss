@@ -1,0 +1,130 @@
+@use './abstracts' as *;
+
+//Intro-links section
+.intro-links-section {
+    background-color: #dddddd;
+    padding: .5rem;
+    font-size: 1.4rem;
+    display: none;
+}
+
+.intro-links-section-inner {
+    width: 80%;
+    margin: auto;
+}
+
+.deliever-message, .inrto-links {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.inrto-links a {
+    padding: 0 1rem;
+}
+
+.inrto-links a:hover {
+    text-decoration: underline;
+}
+
+//Page-Header
+.page-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: solid 2px #960000;
+    padding: 1rem 0;
+}
+
+//Page-Header > Logo-Header
+.logo-header {
+    width: 18%;
+    padding: .5rem;
+}
+
+.logo-header img {
+    margin: auto;
+    text-align: center;
+}
+
+//Page-Header > Search-Header
+.search-header {
+    width: 60%;
+}
+
+.search-header #search-form {
+    width: 90%;
+    border: solid 1px #555555;;
+}
+
+#search-form input {
+    width: 90%;
+    line-height: 3rem;
+    padding: 1rem;
+}
+
+#search-form button {
+    color: #960000;
+    font-size: 2rem;
+    background-color: transparent;
+    width: 10%;
+}
+
+#search-form button:hover {
+    cursor: pointer;
+}
+
+//Page-Header > Cart-Header
+.header-cart {
+    width: 20%;
+}
+
+.header-cart-inner {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header-cart-inner > .cart-icon {
+    padding: .8em;
+    font-size: 1.6em;
+}
+
+.header-cart-inner > .cart-header-info {
+    display: none;
+}
+
+//***FIRST MEDIA QUERY***//
+@include for-tablet-landscape-up {
+    .intro-links-section {
+        display: block;
+    }
+
+    .logo-header {
+        width: 20%;
+    }
+
+    .search-header {
+        width: 50%;
+    }
+
+    .header-cart-inner > .cart-header-info {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+}
+
+//***SECOND MEDIA QUERY***//
+@include for-desktop-up {
+    .intro-links-section-inner {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .deliever-message, .inrto-links {
+        display: inline;
+        width: auto;
+        text-align: auto;
+        flex: 1 0 auto;
+    }
+}

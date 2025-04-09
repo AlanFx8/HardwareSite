@@ -1,0 +1,87 @@
+@use './abstracts' as *;
+
+.products-filter {
+    display: none;
+}
+
+//***FIRST MEDIA QUERY***//
+@include for-tablet-landscape-up {
+    .products-filter {
+        padding: .5em;
+        display: inline-block;
+        width: 25%;
+    }
+
+    .reset-filters-btn {
+        color: #ffffff;
+        background-color: #a80000;
+        padding: .4em;
+        margin-bottom: .4em;
+        font-weight: bold;
+        transition: all .5s;
+    }
+
+    .reset-filters-btn:hover {
+        background-color: #6d0c0c;
+    }
+    
+    .filter-panel {
+        margin-bottom: .5rem;
+        border-top: solid 1px #666666;
+    }
+
+    .filter-panel-header {
+        display: none; //We hide the checkbox -- we only want the label
+    }
+
+    .filter-panel-header h1 {
+        text-align: left;
+        cursor: pointer;
+        font-size: 2.2rem;
+    }
+
+    .filter-panel-content {
+        text-align: justify;
+        max-height: 100vh; //A magic number
+        overflow: hidden;
+        transition: all .25s;
+    }
+
+    .filter-panel-header:checked ~ .filter-panel-content {
+        max-height: 0;
+    }
+    
+    .filter-panel-content-inner {
+        padding: 1.5em;
+    }
+
+    .filter-panel-label {
+        position: relative;
+    }
+
+    .filter-panel-label h1 {
+        margin-left: 24px;
+    }
+
+    //Style the Arrow
+    .filter-panel-header ~ .filter-panel-label::after {
+        content: "\25BC";
+        transform: rotateX(180deg);
+        position: absolute;
+        display: block;
+        top: 20px;
+        transition: all .5s;
+    }
+
+    .filter-panel-header:checked ~ .filter-panel-label::after {
+        transform: rotateX(0deg);
+    }
+
+    .panel-option {
+        padding: .25rem;
+    }
+
+    .panel-option label {
+        margin-left: .8rem;
+    }
+}
