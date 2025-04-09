@@ -6,7 +6,6 @@ import { loadCartItems } from "../features/cartSlice"
 import { GetSearchString } from '../classes/GeneralUtils'
 import { GetTotalItems,GetFullOrderCost } from "../classes/MoneyHelper"
 import { onUpdatedSearch } from "../classes/Events"
-import logo from '../assets/img/logo.png'
 import '../styles/header.scss'
 
 const Header: React.FC = () => {
@@ -47,7 +46,7 @@ const Header: React.FC = () => {
                 <section className="page-header">
                     <div className="logo-header">
                         <Link to="/">
-                            <img src={logo} title="Harry's Hardware" alt="Harry's Hardware logo" />
+                            <img src= "../../img/logo.png" title="Harry's Hardware" alt="Harry's Hardware logo" />
                         </Link>
                     </div>
 
